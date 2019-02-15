@@ -18,4 +18,6 @@ RUN apt purge -y build-essential \
                  postgresql-server-dev-11 \
                  && rm -rf /var/lib/apt/lists/*
 
+RUN rm -rf ./temporal_tables
+
 COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh  
